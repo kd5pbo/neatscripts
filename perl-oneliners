@@ -1,0 +1,4 @@
+Output a series of shell printfs with all the bytes in octal.  Used when the
+only way to upload data is with printf in busybox
+
+perl -nE 'print "printf \x22";print+map{"\\".sprintf"%03o",ord($_)}split//;printf"\x22\n"' filename
